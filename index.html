@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <title>Zun - Lista de Tarefas</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <link rel="stylesheet" href="src/style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   </head>
+   <body>
+      <nav class="bg-white border-b">
+         <div id="nav-content" class="flex justify-between items-center text-neutral-400 px-4 md:px-6 py-2">
+            <small>&copy; zun 2024</small>
+            <div class="flex gap-4">
+               <a href="#" class="fa-brands fa-github"></a>
+               <a href="#" class="fa-brands fa-linkedin"></a>
+            </div>
+         </div>
+      </nav>
+
+      <div id="main">
+         <header class="relative container px-4 md:px-6 pt-6 mx-auto rounded-0 md:rounded-b-xl overflow-hidden mb-10">
+            <div id="toast" class="rounded-lg px-4 py-2 z-50"></div>
+
+            <div class="flex justify-between items-center mb-6 gap-6">
+               <div class="flex flex-col gap-2">
+                  <h1 class="text-xs md:text-base font-light text-white z-30">zun to-do list</h1>
+                  <h1 id="welcome" class="text-3xl md:text-5xl text-white font-semibold z-30"></h1>
+               </div>
+               <div class="flex flex-col self-start items-end text-white font-light z-30">
+                  <small>vite</small>
+                  <small>js vanilla</small>
+                  <small>v1.00</small>
+               </div>
+            </div>
+            <img id="time" class="absolute top-0 right-0 w-full h-[100%] img-fluid overflow-hidden z-0" src="bg-mid.svg" alt="">
+         </header>
+
+         <main class="container px-4 md:px-6 mx-auto">
+            <section class="flex justify-between items-center mb-2">
+               <p class="font-semibold">Minhas tarefas <span id="countTarefas"></span></p>
+               <button id="open-modal-btn" class="self-end bg-black text-white px-3 py-2 rounded-3xl">
+                  <i class="fa-regular fa-plus text-xs mr-1"></i>
+                  <small>Nova tarefa</small>
+               </button>
+            </section>
+
+            <section>
+               <ul id="listaTarefas" class="grid grid-cols-1 mb-10 border border-neutral-300 overflow-hidden rounded-lg"></ul>
+            </section>
+
+            <section class="mb-10">
+               <div class="flex justify-between gap-4 items-center mb-2">
+                  <button id="buttonConcluidas" class="flex items-center border border-neutral-300 rounded-full text-xs px-4 py-2 gap-1">
+                     Concluidas<span id="countConcluidas"></span><i id="iconConcluidas" class="fa-solid fa-caret-down ml-2"></i>
+                  </button>
+                  <div class="h-[1px] w-[100%] bg-neutral-300"></div>
+               </div>
+               <ul id="listaTarefasConcluidas" class="grid grid-cols-1"></ul>
+            </section>
+         </main>
+
+         <div id="modal-overlay">
+            <div id="modal">  
+               <div class="modal-title flex justify-between gap-2">
+                  <h1 class="text-xl font-semibold">Nova tarefa</h1>
+                  <button class="close-modal-btn bg-stone-200 rounded-md px-2"><i class="fa-solid fa-close"></i></button>
+               </div>
+               <div class="modal-content py-8">
+                  <div class="grid grid-cols-1 gap-2">
+                     <input id="inputTarefa" class="bg-neutral-100 border border-neutral-300 px-3 py-2 rounded-md" type="text" name="nome" placeholder="Nome">
+                     <input class="bg-neutral-100 border border-neutral-300 w-full px-3 py-2 rounded-md" type="date" name="data" placeholder="Data">
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <div class="grid grid-cols-3 gap-2">
+                     <button class="close-modal-btn col-span-2 bg-neutral-200 px-3 py-2 rounded-3xl">
+                        <small>Cancelar</small>
+                     </button>
+                     <button id="buttonTarefa" class="bg-black text-white px-3 py-2 rounded-3xl">
+                        <small>Adicionar</small>
+                     </button>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      
+      <script type="module" src="/src/main.js"></script>
+   </body>
+</html>

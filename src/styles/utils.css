@@ -1,0 +1,18 @@
+@keyframes animToast {
+  0% {
+    opacity: 0;
+    transform: tranneutralY(-20px);
+  }
+  30% {
+    opacity: 1;
+    transform: tranneutralY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: tranneutralY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: tranneutralY(20px);
+  }
+}
