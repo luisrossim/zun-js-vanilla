@@ -2,9 +2,11 @@ import { saveItemsLocalStorage, getItemsLocalStorage } from "../utils/local-stor
 
 let count = parseInt(getItemsLocalStorage('count')) || 0;
 
+
 export function getTarefas() {
     return getItemsLocalStorage('listaTarefas') || [];
 }
+
 
 export function criarTarefa(nomeTarefa) {
     let validation = isValidTarefa(nomeTarefa);
@@ -29,6 +31,7 @@ export function criarTarefa(nomeTarefa) {
     return { status: "success", tarefa: tarefa };
 }
 
+
 export function isValidTarefa(nomeTarefa){
     if (nomeTarefa.trim() === "") {
         return { valid: false, message: "Erro ao adicionar tarefa!" };
@@ -39,13 +42,19 @@ export function isValidTarefa(nomeTarefa){
     return { valid: true };
 }
 
+
 export function removerTarefa(id) {
     let tarefas = getTarefas();
     const tarefasAtualizadas = tarefas.filter(t => t.id !== id);
-    if (tarefas.length !== tarefasAtualizadas.length) {
-        saveItemsLocalStorage('listaTarefas', tarefasAtualizadas);
+
+    if (tarefas.length === tarefasAtualizadas.length) {
+        return { status: "error", message: "Erro ao remover tarefa!" };
     }
+
+    saveItemsLocalStorage('listaTarefas', tarefasAtualizadas);
+    return { status: "success", tarefas: tarefasAtualizadas };
 }
+
 
 export function atualizaStatusTarefa(id, concluida){
     let tarefas = getTarefas();

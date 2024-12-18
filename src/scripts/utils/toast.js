@@ -1,5 +1,5 @@
 export function exibirMensagem(acao, mensagem){
-    const buttonTarefa = document.querySelector("#buttonTarefa");
+    const createTarefaBtn = document.querySelector("#submit-create");
     const toast = document.querySelector("#toast");
 
     // limpa, classe
@@ -20,10 +20,10 @@ export function exibirMensagem(acao, mensagem){
     toast.appendChild(span);
 
     toast.style.display = 'block';
-    buttonTarefa.disabled = true;
+    createTarefaBtn.disabled = true;
     
     setTimeout(() => {
         toast.style.display = 'none';
-        buttonTarefa.disabled = false;
+        createTarefaBtn.disabled = false;
     }, 2000);
 }

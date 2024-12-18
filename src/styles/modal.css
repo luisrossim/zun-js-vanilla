@@ -1,4 +1,4 @@
-#modal-overlay {
+#modal-create-overlay, #modal-remove-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -11,7 +11,7 @@
     align-items: center;
 }
 
-#modal {
+#modal-create, #modal-remove {
     background: #fff;
     padding: 20px;
     border-radius: 12px;

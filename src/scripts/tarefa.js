@@ -1,6 +1,6 @@
 import { exibirMensagem } from './utils/toast';
-import { closeModal } from "./utils/modal";
-import { criarTarefa, getTarefas, removerTarefa, atualizaStatusTarefa, isValidTarefa } from './services/tarefa-crud';
+import { closeModal, openRemoveModal } from "./utils/modal";
+import { criarTarefa, getTarefas, removerTarefa, atualizaStatusTarefa } from './services/tarefa-crud';
 
 export function handleCriarTarefa(nomeTarefa) {
     let resultado = criarTarefa(nomeTarefa);
@@ -13,6 +13,19 @@ export function handleCriarTarefa(nomeTarefa) {
     closeModal();
     exibirTarefas();
     exibirMensagem("success", "Tarefa adicionada com sucesso!");
+}
+
+export function handleRemoverTarefa(id) {
+    let resultado = removerTarefa(id);
+
+    if (resultado.status === "error") {
+        exibirMensagem(resultado.status, resultado.message);
+        return;
+    }
+
+    closeModal();
+    exibirTarefas();
+    exibirMensagem("success", "Tarefa removida com sucesso!");
 }
 
 export function exibirTarefas() {
@@ -41,7 +54,7 @@ export function exibirTarefas() {
             const removerTarefaBtn = li.querySelector(".remover-tarefa-btn");
 
             concluirTarefaBtn.addEventListener("click", () => marcarTarefaComoConcluida(tarefa.id));
-            removerTarefaBtn.addEventListener("click", () => handleRemoverTarefa(tarefa.id));
+            removerTarefaBtn.addEventListener("click", () => openRemoveModal(tarefa.id, tarefa.nome));
 
             listaTarefas.appendChild(li);
             countPendentes++;
@@ -116,11 +129,6 @@ function buildNotElements(icon, msg){
     div.className = "flex flex-col gap-2 items-center justify-center bg-neutral-100 text-neutral-400 px-4 py-2 h-52";
     div.innerHTML = `<i class="fa ${icon} text-xl"></i>${msg}`
     return div;
-}
-
-function handleRemoverTarefa(id) {
-    removerTarefa(id);
-    exibirTarefas();
 }
 
 function marcarTarefaComoConcluida(id) {
