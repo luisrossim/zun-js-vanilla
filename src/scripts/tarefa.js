@@ -2,6 +2,9 @@ import { exibirMensagem } from './utils/toast';
 import { closeModal, openRemoveModal } from "./utils/modal";
 import { criarTarefa, getTarefas, removerTarefa, atualizaStatusTarefa } from './services/tarefa-crud';
 
+const showConcluidasBtn = document.querySelector("#buttonConcluidas");
+showConcluidasBtn.addEventListener('click', exibeConcluidas);
+
 export function handleCriarTarefa(nomeTarefa) {
     let resultado = criarTarefa(nomeTarefa);
 
@@ -139,4 +142,14 @@ function marcarTarefaComoConcluida(id) {
 function marcarTarefaComoPendente(id) {
     atualizaStatusTarefa(id, false);
     exibirTarefas();
+}
+
+function exibeConcluidas() {
+    let icon = document.querySelector('#iconConcluidas');
+    if (icon.classList.contains('fa-caret-down')) {
+        icon.classList.replace('fa-caret-down', 'fa-caret-up');
+    } else {
+        icon.classList.replace('fa-caret-up', 'fa-caret-down');
+    }
+    document.querySelector('#listaTarefasConcluidas').classList.toggle('visible');
 }
