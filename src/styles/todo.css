@@ -1,0 +1,12 @@
+#listaTarefasConcluidas {
+    height: 0;
+    overflow: hidden;
+}
+
+#listaTarefas li:nth-child(odd) {
+    background-color: #f5faff;
+}
+
+.visible {
+    height: auto !important;
+}

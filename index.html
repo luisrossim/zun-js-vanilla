@@ -1,118 +1,64 @@
 <!doctype html>
 <html lang="pt-br">
    <head>
-      <title>Zun - Lista de Tarefas</title>
+      <title>Zun - Home</title>
       <meta charset="UTF-3" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/vite.svg" />
       <link rel="stylesheet" href="src/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    </head>
-   <body>
-      <nav class="bg-white border-b">
-         <div id="nav-content" class="flex justify-between items-center text-neutral-400 px-4 md:px-6 py-2">
-            <small>&copy; zun 2024</small>
-            <div class="flex gap-4">
-               <a href="#" class="fa-brands fa-github"></a>
-               <a href="#" class="fa-brands fa-linkedin"></a>
-            </div>
-         </div>
-      </nav>
-
-      <div id="main">
-         <header class="relative container px-4 md:px-6 pt-6 mx-auto rounded-0 md:rounded-b-xl overflow-hidden mb-10">
-            <div id="toast" class="rounded-lg px-4 py-2 z-50"></div>
-
-            <div class="flex justify-between items-center mb-6 gap-6">
-               <div class="flex flex-col gap-2">
-                  <h1 class="text-xs md:text-base font-light text-white z-30">zun to-do list</h1>
-                  <h1 id="welcome" class="text-3xl md:text-5xl text-white font-semibold z-30"></h1>
+   <body class="bg-neutral-100">
+      <div class="min-h-screen flex justify-center items-center">
+         <div class="container bg-white xl:w-[60%] shadow-md overflow-hidden border rounded-2xl m-6">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+               <div 
+                  id="svg" 
+                  class="relative flex flex-col gap-3 items-center justify-center h-[160px] md:h-[420px] bg-gray-800" 
+                  style="background-image: url('/assets/bg-day.svg'); background-position: center; background-repeat: no-repeat; background-size: cover"
+               >
+                  <h1 class="font-bodoni text-white text-8xl lg:text-9xl">
+                     zun
+                  </h1>
+                  <a 
+                     class="absolute bottom-5 left-5 text-2xl text-white hover:opacity-75 transition-all duration-200 ease-out" 
+                     href="https://github.com/luisrossim/zun-js-vanilla" 
+                     target="_blank"
+                  >
+                     <i class="fa-brands fa-github"></i>
+                  </a>
                </div>
-               <div class="flex flex-col self-start items-end text-white font-light z-30">
-                  <small>vite</small>
-                  <small>js vanilla</small>
-                  <small>v1.01</small>
-               </div>
-            </div>
-            <img id="time" class="absolute top-0 right-0 w-full h-[100%] img-fluid overflow-hidden z-0" src="bg-mid.svg" alt="">
-         </header>
 
-         <main class="container px-4 md:px-6 mx-auto">
-            <section class="flex justify-between items-center mb-2">
-               <p class="font-semibold">Minhas tarefas <span id="countTarefas"></span></p>
-               <button id="open-modal-create-btn" class="self-end bg-black text-white px-3 py-2 rounded-3xl">
-                  <i class="fa-regular fa-plus text-xs mr-1"></i>
-                  <small>Nova tarefa</small>
-               </button>
-            </section>
-
-            <section>
-               <ul id="listaTarefas" class="grid grid-cols-1 mb-10 border border-neutral-300 overflow-hidden rounded-lg"></ul>
-            </section>
-
-            <section class="mb-10">
-               <div class="flex justify-between gap-4 items-center mb-2">
-                  <button id="buttonConcluidas" class="flex items-center border border-neutral-300 rounded-full text-xs px-4 py-2 gap-1">
-                     Concluidas<span id="countConcluidas"></span><i id="iconConcluidas" class="fa-solid fa-caret-down ml-2"></i>
-                  </button>
-                  <div class="h-[1px] w-[100%] bg-neutral-300"></div>
-               </div>
-               <ul id="listaTarefasConcluidas" class="grid grid-cols-1"></ul>
-            </section>
-         </main>
-
-         <div id="modal-create-overlay">
-            <div id="modal-create">
-               <div class="modal-title flex justify-between gap-2">
-                  <h1 class="text-xl font-semibold">Nova tarefa</h1>
-                  <button class="close-modal-btn bg-stone-200 rounded-md px-2"><i class="fa-solid fa-close"></i></button>
-               </div>
-               <div class="modal-content py-8">
-                  <div class="grid grid-cols-1 gap-2">
-                     <input id="inputTarefa" class="bg-neutral-100 border border-neutral-300 px-3 py-2 rounded-md" type="text" name="nome" placeholder="Nome">
-                     <input class="bg-neutral-100 border border-neutral-300 w-full px-3 py-2 rounded-md" type="date" name="data" placeholder="Data">
+               <div class="flex flex-col gap-10 justify-between p-8">
+                  <div>
+                     <div class="flex flex-col md:text-start text-center mb-7">
+                        <h1 id="text" class="font-medium text-2xl">Boa tarde!</h1>
+                        <p class="text-neutral-600 font-light">Selecione uma ferramenta:</p>
+                     </div>
+                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-2">
+                        <a class="home-option bg-sky-500 hover:bg-sky-600" href="/zun-js-vanilla/todo.html">
+                           <i class="fa fa-pencil"></i>
+                           <span>Lista de tarefas</span>
+                        </a>
+                        <a class="home-option bg-emerald-500 hover:bg-emerald-600" href="/zun-js-vanilla/calculadora.html">
+                           <i class="fa fa-calculator"></i>
+                           <span>Calculadora</span>
+                        </a>
+                        <a class="home-option bg-pink-500 hover:bg-pink-600" href="#">
+                           <i class="fa fa-file-lines"></i>
+                           <span>Formulario</span>
+                        </a>
+                     </div>
                   </div>
-               </div>
-               <div class="modal-footer">
-                  <div class="grid grid-cols-3 gap-2">
-                     <button class="close-modal-btn col-span-2 bg-neutral-200 px-3 py-2 rounded-3xl">
-                        <small>Cancelar</small>
-                     </button>
-                     <button id="submit-create" class="bg-black text-white px-3 py-2 rounded-3xl">
-                        <small>Adicionar</small>
-                     </button>
-                 </div>
-               </div>
-            </div>
-         </div>
-
-         <div id="modal-remove-overlay">
-            <div id="modal-remove">
-               <div class="modal-title flex justify-between gap-2">
-                  <h1 class="text-xl font-semibold">Excluir tarefa</h1>
-                  <button class="close-modal-btn bg-stone-200 rounded-md px-2"><i class="fa-solid fa-close"></i></button>
-               </div>
-               <div class="modal-content py-8">
-                  <div class="flex flex-col gap-2">
-                     <h2 class="font-medium">Tem certeza que deseja excluir a tarefa?</h2>
-                     <p id="tarefa-remove-label"></p>
+                  <div class="flex justify-center gap-4 text-xs text-neutral-300">
+                     <a href="https://github.com/luisrossim/zun-js-vanilla" target="_blank" class="hover:underline">&copy; 2024 luisrossim</a>
+                     <p>v1.2</p>
                   </div>
-               </div>
-               <div class="modal-footer">
-                  <div class="grid grid-cols-3 gap-2">
-                     <button class="close-modal-btn col-span-2 bg-neutral-200 px-3 py-2 rounded-3xl">
-                        <small>Cancelar</small>
-                     </button>
-                     <button id="submit-remove" class="bg-red-600 text-white px-3 py-2 rounded-3xl">
-                        <small>Excluir</small>
-                     </button>
-                 </div>
                </div>
             </div>
          </div>
       </div>
-      
-      
-      <script type="module" src="/src/main.js"></script>
+
+      <script type="module" src="src/main.js"></script>
    </body>
 </html>

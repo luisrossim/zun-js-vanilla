@@ -2,8 +2,11 @@ import { exibirMensagem } from './utils/toast';
 import { closeModal, openRemoveModal } from "./utils/modal";
 import { criarTarefa, getTarefas, removerTarefa, atualizaStatusTarefa } from './services/tarefa-crud';
 
+exibirTarefas();
+
 const showConcluidasBtn = document.querySelector("#buttonConcluidas");
 showConcluidasBtn.addEventListener('click', exibeConcluidas);
+
 
 export function handleCriarTarefa(nomeTarefa) {
     let resultado = criarTarefa(nomeTarefa);
@@ -18,6 +21,7 @@ export function handleCriarTarefa(nomeTarefa) {
     exibirMensagem("success", "Tarefa adicionada com sucesso!");
 }
 
+
 export function handleRemoverTarefa(id) {
     let resultado = removerTarefa(id);
 
@@ -30,6 +34,7 @@ export function handleRemoverTarefa(id) {
     exibirTarefas();
     exibirMensagem("success", "Tarefa removida com sucesso!");
 }
+
 
 export function exibirTarefas() {
     let tarefas = getTarefas();
@@ -84,6 +89,7 @@ export function exibirTarefas() {
     }
 }
 
+
 function atualizaCounts(tarefas){
     let countPendenteDiv = document.querySelector('#countTarefas');
     let countPendente = tarefas.filter(t => !t.concluida).length;
@@ -94,13 +100,14 @@ function atualizaCounts(tarefas){
     countConcluidasDiv.innerHTML = "(" + countConcluidas + ")";
 }
 
+
 function buildTarefaPendenteElement(tarefa) {
     const li = document.createElement("li");
-    li.className = "flex justify-between font-medium px-4 py-2";
+    li.className = "flex justify-between font-light px-4 py-1";
     li.innerHTML = `
-        <div class="flex items-center gap-2">
-            <button class="concluir-tarefa-btn fa-regular fa-circle text-lg text-black-500"></button>
-            <span class="text-md text-black">${tarefa.nome}</span>
+        <div class="flex items-center gap-3">
+            <button class="concluir-tarefa-btn fa-regular fa-circle"></button>
+            <span>${tarefa.nome}</span>
         </div>
         <div class="flex gap-2 justify-end text-xs">
             <small class="self-center text-neutral-400">#${tarefa.id}</small>
@@ -111,13 +118,14 @@ function buildTarefaPendenteElement(tarefa) {
     return li;
 }
 
+
 function buildTarefaConcluidaElement(tarefa) {
     const li = document.createElement("li");
     li.className = "flex justify-between text-neutral-400 opacity-50";
     li.innerHTML = `
-        <div class="flex items-center px-4 py-2 gap-3">
-            <button class="btn-concluir-tarefa fa-solid fa-check-circle text-lg text-black-500"></button>
-            <span class="text-md text-black font-light line-through">${tarefa.nome}</span>
+        <div class="flex items-center font-light px-4 py-1 gap-3">
+            <button class="btn-concluir-tarefa fa-solid fa-check-circle"></button>
+            <span class="line-through">${tarefa.nome}</span>
         </div>
         <div class="flex gap-2 justify-end text-xs">
             <small class="self-center px-2 text-neutral-600">${tarefa.finalizadoEm}</small>
@@ -127,22 +135,26 @@ function buildTarefaConcluidaElement(tarefa) {
     return li;
 }
 
+
 function buildNotElements(icon, msg){
     const div = document.createElement("div");
-    div.className = "flex flex-col gap-2 items-center justify-center bg-neutral-100 text-neutral-400 px-4 py-2 h-52";
+    div.className = "flex flex-col gap-2 items-center justify-center text-neutral-400 px-4 py-2 h-52";
     div.innerHTML = `<i class="fa ${icon} text-xl"></i>${msg}`
     return div;
 }
+
 
 function marcarTarefaComoConcluida(id) {
     atualizaStatusTarefa(id, true);
     exibirTarefas();
 }
 
+
 function marcarTarefaComoPendente(id) {
     atualizaStatusTarefa(id, false);
     exibirTarefas();
 }
+
 
 function exibeConcluidas() {
     let icon = document.querySelector('#iconConcluidas');

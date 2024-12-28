@@ -33,6 +33,9 @@ export function criarTarefa(nomeTarefa) {
 
 
 export function isValidTarefa(nomeTarefa){
+    if (nomeTarefa === "") {
+        return { valid: false, message: "Nome da tarefa inexistente!" };
+    }
     if (nomeTarefa.trim() === "") {
         return { valid: false, message: "Erro ao adicionar tarefa!" };
     }

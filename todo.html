@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-br">
+   <head>
+      <title>Zun - Lista de Tarefas</title>
+      <meta charset="UTF-3" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <link rel="stylesheet" href="src/style.css">
+      <link rel="stylesheet" href="src/styles/todo.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   </head>
+   <body class="bg-neutral-100">
+      <nav class="bg-sky-600 text-white">
+         <div id="nav-content" class="flex justify-between items-center px-4 md:px-6 py-6">
+            <div class="flex items-center gap-6">
+               <a href="/" class="fa fa-home text-xl bg-sky-100 p-2 text-sky-600"></a>
+               <div class="flex flex-col">
+                  <span class="font-bodoni text-xs font-bold">ZUN</span>
+                  <span class="text-2xl font-semibold">LISTA DE TAREFAS</span>
+               </div>
+            </div>
+            <a href="https://github.com/luisrossim/zun-js-vanilla" target="_blank">
+               <i class="fa-brands text-xl fa-github"></i>
+            </a>
+         </div>
+      </nav>
+      
+      <div id="toast" class="rounded-lg px-4 py-2 z-50"></div>
+
+      <div id="main">
+         <main class="px-4 md:px-6 my-6 mx-2 border py-6 rounded-2xl bg-white">
+            <section class="flex justify-between items-center mb-4">
+               <p class="font-semibold text-lg">
+                  Minhas tarefas <span id="countTarefas"></span>
+               </p>
+               <button id="open-modal-create-btn" class="self-end bg-sky-600 text-white px-3 py-2 rounded-3xl">
+                  <i class="fa-regular fa-plus text-xs mr-1"></i>
+                  <small>Nova tarefa</small>
+               </button>
+            </section>
+
+            <section>
+               <ul id="listaTarefas" class="grid grid-cols-1 mb-10 border-neutral-300 overflow-hidden rounded-lg"></ul>
+            </section>
+
+            <section>
+               <div class="flex justify-between gap-4 items-center mb-2">
+                  <button id="buttonConcluidas" 
+                     class="flex items-center border border-neutral-300 hover:bg-neutral-100 rounded-full text-xs px-4 py-2 gap-1"
+                  >
+                     Concluidas <span id="countConcluidas"></span>
+                     <i id="iconConcluidas" class="fa-solid fa-caret-down ml-2"></i>
+                  </button>
+                  <div class="h-[1px] w-[100%] bg-neutral-300"></div>
+               </div>
+               <ul id="listaTarefasConcluidas" class="grid grid-cols-1"></ul>
+            </section>
+         </main>
+
+         <!-- [MODAL CREATE] init -->
+         <div id="modal-create-overlay">
+            <div id="modal-create">
+               <div class="modal-title flex justify-between gap-2">
+                  <h1 class="text-xl font-semibold">Nova tarefa</h1>
+                  <button class="close-modal-btn hover:bg-neutral-100 rounded-md px-2"><i class="fa-solid fa-close"></i></button>
+               </div>
+               <div class="modal-content py-8">
+                  <div class="grid grid-cols-1 gap-2">
+                     <input id="inputTarefa" class="bg-neutral-100 border border-neutral-300 px-3 py-2 rounded-md" type="text" name="nome" placeholder="Nome">
+                     <input class="bg-neutral-100 border border-neutral-300 w-full px-3 py-2 rounded-md" type="date" name="data" placeholder="Data">
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <div class="grid grid-cols-3 gap-2">
+                     <button class="close-modal-btn col-span-2 border border-neutral-300 hover:bg-neutral-100 px-3 py-2 rounded-3xl">
+                        <small>Cancelar</small>
+                     </button>
+                     <button id="submit-create" class="bg-sky-600 text-white px-3 py-2 rounded-3xl">
+                        <small>Adicionar</small>
+                     </button>
+                 </div>
+               </div>
+            </div>
+         </div>
+         <!-- [MODAL CREATE] end -->
+
+         <!-- [MODAL REMOVE] init -->
+         <div id="modal-remove-overlay">
+            <div id="modal-remove">
+               <div class="modal-title flex justify-between gap-2">
+                  <h1 class="text-xl font-semibold">Excluir tarefa</h1>
+                  <button class="close-modal-btn hover:bg-neutral-100 rounded-xl px-2"><i class="fa-solid fa-close"></i></button>
+               </div>
+               <div class="modal-content py-8">
+                  <div class="flex flex-col gap-2">
+                     <h2 class="font-medium">Tem certeza que deseja excluir a tarefa?</h2>
+                     <p id="tarefa-remove-label"></p>
+                  </div>
+               </div>
+               <div class="modal-footer">
+                  <div class="grid grid-cols-3 gap-2">
+                     <button class="close-modal-btn col-span-2 border border-neutral-300 hover:bg-neutral-100 px-3 py-2 rounded-3xl">
+                        <small>Cancelar</small>
+                     </button>
+                     <button id="submit-remove" class="bg-red-600 text-white px-3 py-2 rounded-3xl">
+                        <small>Excluir</small>
+                     </button>
+                 </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- [MODAL REMOVE] end -->
+      
+      <script type="module" src="src/scripts/tarefa.js"></script>
+   </body>
+</html>
