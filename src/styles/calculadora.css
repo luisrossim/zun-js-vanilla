@@ -10,6 +10,11 @@
     border-radius: 9999px;
 }
 
-#calculadora button:not(.calc-action) {
+#calculadora button:not(.green) {
     background-color: #F6F6F6;
+}
+
+#calculadora .green {
+    background-color: #34D399;
+    color: #FFF;
 }

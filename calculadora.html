@@ -11,55 +11,51 @@
 </head>
 <body class="bg-neutral-100">
     <nav class="bg-emerald-600 text-white">
-        <div id="nav-content" class="flex justify-between items-center px-4 md:px-6 py-6">
-           <div class="flex items-center gap-6">
-              <div class="flex flex-col gap-4">
-                 <p class="text-xs">
-                    <a href="/zun-js-vanilla" class="text-xs bg-emerald-500 px-2 py-1 text-white">
-                       <i class="fa fa-arrow-left mr-1"></i>
-                       <span>HOME</span>
-                    </a>
-                 </p>
-                 <span style="line-height: 1;" class="text-2xl font-semibold">CALCULADORA</span>
-              </div>
+        <div id="nav-content" class="px-4 md:px-6 py-4">
+           <div class="flex justify-between items-center mb-4">
+              <a href="/zun-js-vanilla" class="text-xs bg-emerald-500 px-2 py-1 text-white">
+                 <i class="fa fa-arrow-left mr-1"></i>
+                 <span>HOME</span>
+              </a>
+              <a class="font-bodoni text-xl" href="https://github.com/luisrossim/zun-js-vanilla" target="_blank">
+                 zun
+              </a>
            </div>
-           <a class="flex items-center text-xl gap-2" href="https://github.com/luisrossim/zun-js-vanilla" target="_blank">
-              <span class="font-bodoni">zun</span>
-              <i class="fa-brands fa-github"></i>
-           </a>
+           <span style="line-height: 1" class="text-2xl font-semibold">CALCULADORA</span>
         </div>
      </nav>
 
     <div id="calculadora-content">
         <main class="px-4 md:px-6 my-6 mx-2 border py-6 rounded-2xl bg-white">
             <div id="calculadora" class="grid grid-cols-4 gap-2">
-                <section class="col-span-4 border p-4 rounded-2xl text-end text-5xl overflow-hidden text-ellipsis mb-2">
-                    777
-                </section>
+                <div class="col-span-4 flex flex-col border p-4 rounded-2xl overflow-hidden text-end h-[80px] mb-2">
+                    <p id="display" class="text-neutral-500"></p>
+                    <p id="result" class="overflow-hidden text-ellipsis text-2xl"></p>
+                </div>
 
-                <button>AC</button>
-                <button>+/-</button>
-                <button>%</button>
-                <button class="calc-action bg-emerald-400 text-white">/</button>
+                <button id="clear">AC</button>
+                <button class="acao">+/-</button>
+                <button class="operador">%</button>
+                <button class="operador green">/</button>
 
-                <button>7</button>
-                <button>8</button>
-                <button>9</button>
-                <button class="calc-action bg-emerald-400 text-white">*</button>
+                <button class="numero">7</button>
+                <button class="numero">8</button>
+                <button class="numero">9</button>
+                <button class="operador green">*</button>
 
-                <button>4</button>
-                <button>5</button>
-                <button>6</button>
-                <button class="calc-action bg-emerald-400 text-white">-</button>
+                <button class="numero">4</button>
+                <button class="numero">5</button>
+                <button class="numero">6</button>
+                <button class="operador green">-</button>
 
-                <button>1</button>
-                <button>2</button>
-                <button>3</button>
-                <button class="calc-action bg-emerald-400 text-white">+</button>
+                <button class="numero">1</button>
+                <button class="numero">2</button>
+                <button class="numero">3</button>
+                <button class="operador green">+</button>
 
-                <button>0</button>
-                <button>,</button>
-                <button class="calc-action bg-emerald-400 text-white col-span-2">=</button>
+                <button class="numero">0</button>
+                <button id="decimal" class="acao">.</button>
+                <button id="igual" class="green col-span-2">=</button>
             </div>
         </main>
     </div>

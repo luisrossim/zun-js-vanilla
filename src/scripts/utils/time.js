@@ -11,7 +11,7 @@ export function handleSVGTime(){
         src = '/zun-js-vanilla/assets/bg-day.svg';
         msg = 'Bom dia!';
     } else if (horaAtual >= 12 && horaAtual < 19) {
-        src = '/zun-js-vanilla/assets/bg-day.svg';
+        src = '/zun-js-vanilla/assets/bg-mid.svg';
         msg = 'Boa tarde!';
     } else {
         src = '/zun-js-vanilla/assets/bg-night.svg';
