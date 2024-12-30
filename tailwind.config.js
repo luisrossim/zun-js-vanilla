@@ -4,6 +4,8 @@ module.exports = {
     "./index.html",
     "./todo.html",
     "./calculadora.html",
+    "./form.html",
+    "./ecommerce.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {

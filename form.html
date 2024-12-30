@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt-br">
+   <head>
+      <title>Zun - Formulário</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <link rel="stylesheet" href="src/style.css">
+      <link rel="stylesheet" href="src/styles/form.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   </head>
+   <body class="bg-neutral-100">
+      <nav class="bg-indigo-600 text-white">
+         <div id="nav-content" class="px-4 md:px-6 py-4">
+            <div class="flex justify-between items-center mb-4">
+               <a href="/zun-js-vanilla" class="text-xs bg-indigo-500 px-2 py-1 text-white">
+                  <i class="fa fa-arrow-left mr-1"></i>
+                  <span>HOME</span>
+               </a>
+               <a class="font-bodoni text-xl" href="https://github.com/luisrossim/zun-js-vanilla" target="_blank">
+                  <img src="vite.svg" width="20px" alt="">
+               </a>
+            </div>
+            <div class="flex items-center gap-3">
+               <i class="fa fa-file-lines text-lg"></i>
+               <span style="line-height: 1" class="text-2xl font-semibold">FORMULÁRIO</span>
+            </div>
+         </div>
+      </nav>
+
+      <div id="main">
+         <main class="px-4 md:px-6 my-6 mx-2 border py-6 rounded-2xl bg-white">
+            <div class="flex items-center gap-4 bg-gray-500 text-gray-100 rounded-md px-4 py-3 mb-10">
+               <i class="fa-solid fa-shield-halved text-2xl"></i>
+               <p class="text-sm md:text-base">Esse formulário se trata de uma <strong>aplicação teste</strong> para validação de dados e exibição. <strong>Não informe dados pessoais e sensíveis.</strong></p>
+            </div>
+            <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+               <section class="md:col-span-2">
+                  <label for="nome">Nome completo:</label>
+                  <input required id="nome" type="text" name="nome">
+                  <span class="text-sm text-neutral-400 font-light">Nome deve possuir entre 3 e 20 caracteres.</span>
+               </section>
+               <section>
+                  <label for="nascimento">Data de nascimento:</label>
+                  <input required id="nascimento" type="date" name="nascimento">
+               </section>
+               <section>
+                  <label for="genero">Gênero:</label>
+                  <select id="genero" name="genero">
+                     <option value="indefinido" selected>Indefinido</option>
+                     <option value="masc">Masculino</option>
+                     <option value="fem">Feminino</option>
+                  </select>
+               </section>
+               <section class="md:col-span-2">
+                  <label for="email">E-mail:</label>
+                  <input required id="email" type="email" name="email">
+               </section>
+               <section>
+                  <label for="cpf">CPF:</label>
+                  <div class="relative">
+                     <input required class="w-full" id="cpf" type="text" name="cpf" placeholder="000.000.000-00" maxlength="11">
+                     <button
+                        id="gerarCPF"
+                        type="button"
+                        data-tooltip="Gerar CPF"
+                        class="absolute top-[7px] right-2 tooltip-container text-sm bg-indigo-600 text-white rounded-md py-1 px-2"
+                     >
+                        Gerar
+                     </button>
+                  </div>
+               </section>
+               <section>
+                  <label for="telefone">Telefone:</label>
+                  <input required id="telefone" type="text" name="telefone" placeholder="(00) 00000-0000">
+               </section>
+               <section>
+                  <label for="cep">CEP:</label>
+                  <div class="relative">
+                     <input required class="w-full" id="cep" type="text" name="cep" placeholder="00000-000" maxlength="8">
+                     <button
+                        id="consultarCEP"
+                        type="button"
+                        data-tooltip="Consultar e preencher"
+                        class="absolute top-[7px] right-2 tooltip-container text-sm bg-indigo-600 text-white rounded-md py-1 px-2"
+                     >
+                        Consultar
+                     </button>
+                  </div>
+               </section>
+               <section>
+                  <label for="estado">Estado:</label>
+                  <input required id="estado" type="text" name="estado">
+               </section>
+               <section>
+                  <label for="cidade">Cidade:</label>
+                  <input required id="cidade" type="text" name="cidade">
+               </section>
+               <section>
+                  <label for="bairro">Bairro:</label>
+                  <input required id="bairro" type="text" name="bairro">
+               </section>
+               <section class="md:col-span-2 row termos mt-6">
+                  <input required type="checkbox" name="termos" id="termos">
+                  <label for="termos">Li e concordo com os <a href="#">termos de uso</a> e <a href="#">política de privacidade</a>.</label>
+               </section>
+               
+               <div class="md:col-span-2 flex justify-between gap-4 flex-col md:flex-row border-t pt-6 mt-6">
+                  <button
+                     type="button"   
+                     class="flex items-center self-start md:self-center text-sm gap-2 text-neutral-600 border border-neutral-400 hover:bg-neutral-100 rounded-full px-4 py-1"
+                  >
+                     <i class="fa fa-xmark"></i>
+                     <span>Limpar</span>
+                  </button>
+                  <button 
+                     type="submit"
+                     class="flex items-center gap-3 bg-indigo-600 justify-center rounded-full px-12 py-2 text-white"
+                  >
+                     <i class="fa fa-paper-plane"></i>
+                     <span>Enviar</span>
+                  </button>
+               </div>
+            </form>
+         </main>
+      </div>
+      
+      <script type="module" src="src/scripts/form.js"></script>
+      <script type="module" src="src/scripts/utils/tooltip.js"></script>
+   </body>
+</html>

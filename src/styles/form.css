@@ -1,0 +1,53 @@
+form section {
+    display: flex;
+    gap: 0.4rem;
+}
+
+form section:not(.row) {
+    flex-direction: column;
+}
+
+form section.row {
+    flex-direction: row;
+}
+
+form section label {
+    align-self: flex-start;
+    font-weight: 500;
+}
+
+form section {
+    input, select {
+        background-color: #F5F5F5;
+        border: 1px solid #E5E5E5;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-weight: 300;
+    }
+    select {
+        padding: 0.65rem 1rem;
+    }
+}
+
+form section input:focus {
+    outline: none;
+    border: 1px solid rgb(108, 108, 108);
+}
+
+form section.termos label a {
+    color: rgb(49, 107, 255);
+}
+
+form section.termos label a:hover {
+    text-decoration: underline;
+}
+
+.invalid {
+    border: 1px solid rgba(255, 0, 0, 0.80) !important;
+    background-color: rgba(255, 0, 0, 0.020);
+}
+
+.helper-text {
+    color: red;
+    font-weight: 300;
+}
