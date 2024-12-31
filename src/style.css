@@ -14,7 +14,7 @@ html {
   font-family: "Outfit", sans-serif;
 }
 
-#main, #nav-content {
+#main, #nav-content, #nav-ecommerce {
   margin: 0 auto;
   max-width: 62rem;
 }
@@ -96,4 +96,13 @@ button:hover {
 .toast.hide {
   opacity: 0;
   transform: translateY(-20px);
+}
+
+.loading-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('/zun-js-vanilla/assets/icon-loading.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
 }

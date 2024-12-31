@@ -6,18 +6,19 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/svg+xml" href="/vite.svg" />
       <link rel="stylesheet" href="src/style.css">
+      <link rel="stylesheet" href="src/styles/ecommerce.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    </head>
    <body class="bg-neutral-100">
-      <nav class="bg-gray-800 text-white">
+      <nav class="bg-black text-white">
          <div id="nav-content" class="px-4 md:px-6 py-4">
             <div class="flex justify-between items-center mb-4">
-               <a href="/zun-js-vanilla" class="text-xs bg-gray-700 px-2 py-1 text-white">
+               <a href="/zun-js-vanilla" class="text-xs bg-gray-800 px-2 py-1 text-white">
                   <i class="fa fa-arrow-left mr-1"></i>
                   <span>HOME</span>
                </a>
-               <a class="font-bodoni text-xl" href="https://github.com/luisrossim/zun-js-vanilla" target="_blank">
-                  <img src="vite.svg" width="20px" alt="">
+               <a class="text-gray-400 text-sm hover:underline" href="https://github.com/luisrossim/zun-js-vanilla" target="_blank">
+                  <span>&copy; 2024 zun luisrossim<i class="fa-brands fa-github text-[12px] ml-2"></i></span>
                </a>
             </div>
             <div class="flex items-center gap-3">
@@ -27,11 +28,44 @@
          </div>
       </nav>
 
+      <div class="sticky top-[-1px] bg-white z-40 shadow-md">
+         <div id="nav-ecommerce">
+            <div class="flex justify-between items-center font-light gap-4 px-4 py-3">
+               <div class="flex items-center gap-3 px-2"> 
+                  <i class="fa fa-truck-fast"></i>
+                  <span>Frete Grátis</span>
+               </div>
+               <img src="/vite.svg" width="40px" alt="zun-logo">
+               <a class="flex items-center bg-black text-white py-2 rounded-full gap-3 px-4"> 
+                  <i class="fa fa-bag-shopping"></i>
+                  <span>Carrinho</span>
+               </a>
+            </div>
+            <div class="grid grid-cols-4 text-center text-sm md:mx-2 border overflow-hidden md:rounded-t-2xl font-light">
+               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Camisetas</a>
+               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Calças</a>
+               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Jaquetas</a>
+               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Tênis</a>
+            </div>
+         </div>
+      </div>
+
       <div id="main">
+         <section class="grid grid-cols-1 md:grid-cols-3 md:my-6 md:rounded-2xl md:mx-2 overflow-hidden bg-white md:border">
+            <div class="md:col-span-1 banner banner-destaques h-[200px] md:h-auto"><span>DESTAQUES</span></div>
+            <div id="destaques" class="md:col-span-2 grid grid-cols-2 gap-2 p-4"></div>
+         </section>
+
+         <section class="grid grid-cols-1 md:grid-cols-3 md:my-6 md:rounded-2xl md:mx-2 overflow-hidden bg-white md:border">
+            <div id="novidades" class="md:col-span-2 grid grid-cols-2 gap-2 p-4 order-last md:order-1"></div>
+            <div class="md:col-span-1 banner banner-novidades order-1 md:order-last h-[200px] md:h-auto"><span>NOVIDADES</span></div>
+         </section>
+
          <main class="px-4 md:px-6 my-6 mx-2 border py-6 rounded-2xl bg-white">
             <p>e-commerce works!</p>
          </main>
       </div>
       
+      <script type="module" src="src/scripts/ecommerce.js"></script>
    </body>
 </html>

@@ -21,11 +21,17 @@ gerarCPFBtn.addEventListener('click', () => {
 })
 
 consultarCEPBtn.addEventListener('click', () => {
+    const loadingIcon = document.createElement('span');
+    loadingIcon.classList.add('loading-icon');
+
+    consultarCEPBtn.insertAdjacentElement('afterbegin', loadingIcon);
     consultarCEPBtn.disabled = true;
+
     handleConsultarCEP().finally(() => {
         setTimeout(() => {
+            loadingIcon.remove();
             consultarCEPBtn.disabled = false;
-        }, 1000);
+        }, 200);
     });
 });
 
@@ -68,12 +74,13 @@ async function submitForm(event) {
             invalidInputs.push(element.input);
             showErrorMessage(element.input, element.errorMessage);
         });
+
         exibirMensagem("error", `O(s) campo(s) (${invalidInputs.join(', ')}) estão inválidos!`);
         return;
     }
 
-    console.log(data);
-    alert("Sucesso!");
+    removeErrorMessage("cep");
+    exibirMensagem("success", "Formulário enviado com sucesso!");
 }
 
 
@@ -81,6 +88,7 @@ function handleGerarCPF(){
     const cpf = gerarCPF();
     const maskedCpf = cpfMask(cpf);
     inputCPF.value = maskedCpf;
+    removeErrorMessage("cpf");
     exibirMensagem("success", "CPF gerado com sucesso!");
 }
 

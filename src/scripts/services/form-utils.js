@@ -25,8 +25,13 @@ export async function validarForm(data){
 
 
 function buildNomeValidation(nome){
+    const nomeRegex = /^[a-zA-Zá-úÁ-Úçãõáàâêîôù\s]*$/;
+    
     if (nome === "") {
         return { valid: false, error: "Nome é obrigatório!" };
+    }
+    if (!nomeRegex.test(nome)) {
+        return { valid: false, error: "Nome inválido! Somente letras e espaços são permitidos." };
     }
     if (nome.trim() === "") {
         return { valid: false, error: "Nome inválido!" };
