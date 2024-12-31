@@ -5,8 +5,10 @@
       "preco": 49.99,
       "imagem": "/zun-js-vanilla/assets/camiseta-1.jpg",
       "descricao": "Camiseta 1 de algodão 100% confortável.",
+      "desconto": 30,
       "estoque": 20,
-      "destaque": true
+      "destaque": false,
+      "novidade": true
     },
     {
       "id": 2,
@@ -14,8 +16,10 @@
       "preco": 59.99,
       "imagem": "/zun-js-vanilla/assets/camiseta-2.jpg",
       "descricao": "Camiseta 2 de algodão 100% confortável.",
+      "desconto": 35,
       "estoque": 3,
-      "destaque": true
+      "destaque": true,
+      "novidade": false
     },
     {
       "id": 3,
@@ -23,8 +27,10 @@
       "preco": 69.99,
       "imagem": "/zun-js-vanilla/assets/camiseta-3.jpg",
       "descricao": "Camiseta 3 de algodão 100% confortável.",
+      "desconto": 20,
       "estoque": 3,
-      "destaque": true
+      "destaque": false,
+      "novidade": true
     },
     {
       "id": 6,
@@ -32,8 +38,10 @@
       "preco": 95.99,
       "imagem": "/zun-js-vanilla/assets/camiseta-6.jpg",
       "descricao": "Camiseta 6 de algodão 100% confortável.",
+      "desconto": 15,
       "estoque": 3,
-      "destaque": true
+      "destaque": false,
+      "novidade": true
     },
     {
       "id": 9,
@@ -41,8 +49,10 @@
       "preco": 119.99,
       "imagem": "/zun-js-vanilla/assets/camiseta-9.jpg",
       "descricao": "Camiseta 9 de algodão 100% confortável.",
+      "desconto": 35,
       "estoque": 3,
-      "destaque": true
+      "destaque": true,
+      "novidade": false
     },
     {
       "id": 10,
@@ -50,7 +60,9 @@
       "preco": 129.99,
       "imagem": "/zun-js-vanilla/assets/camiseta-10.jpg",
       "descricao": "Camiseta 10 de algodão 100% confortável.",
+      "desconto": 20,
       "estoque": 3,
-      "destaque": true
+      "destaque": false,
+      "novidade": true
     }
 ]  
