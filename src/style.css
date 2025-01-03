@@ -14,7 +14,7 @@ html {
   font-family: "Outfit", sans-serif;
 }
 
-#main, #nav-content, #nav-ecommerce {
+#main, #nav-content {
   margin: 0 auto;
   max-width: 62rem;
 }

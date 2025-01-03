@@ -1,56 +1,102 @@
 [
     {
       "id": 1,
-      "nome": "Camiseta 1",
-      "preco": 49.99,
+      "nome": "Camiseta Zun Urban Explorer Edition",
+      "preco": 249.98,
       "imagem": "/zun-js-vanilla/assets/camiseta-1.jpg",
-      "descricao": "Camiseta 1 de algodão 100% confortável.",
-      "estoque": 20,
-      "destaque": true
+      "descricao": "Camiseta Zun Urban Explorer Edition de algodão 100% confortável.",
+      "desconto": 30,
+      "estoque": 2,
+      "destaque": false
     },
     {
       "id": 2,
-      "nome": "Camiseta 2",
-      "preco": 59.99,
+      "nome": "Camiseta Zun Comfort Fit Classic",
+      "preco": 259.98,
       "imagem": "/zun-js-vanilla/assets/camiseta-2.jpg",
-      "descricao": "Camiseta 2 de algodão 100% confortável.",
+      "descricao": "Camiseta Zun Comfort Fit Classic de algodão 100% confortável.",
+      "desconto": 35,
       "estoque": 3,
       "destaque": true
     },
     {
       "id": 3,
-      "nome": "Camiseta 3",
-      "preco": 69.99,
+      "nome": "Camiseta Zun Everyday Essential",
+      "preco": 269.55,
       "imagem": "/zun-js-vanilla/assets/camiseta-3.jpg",
-      "descricao": "Camiseta 3 de algodão 100% confortável.",
+      "descricao": "Camiseta Zun Everyday Essential de algodão 100% confortável.",
+      "desconto": 20,
       "estoque": 3,
+      "destaque": false
+    },
+    {
+      "id": 4,
+      "nome": "Camiseta Zun Italic 1 Statement",
+      "preco": 229.65,
+      "imagem": "/zun-js-vanilla/assets/camiseta-4.jpg",
+      "descricao": "Camiseta Zun Italic 1 Statement de algodão 100% confortável.",
+      "desconto": 20,
+      "estoque": 3,
+      "destaque": false
+    },
+    {
+      "id": 5,
+      "nome": "Camiseta Zun Italic 2 Origins",
+      "preco": 289.95,
+      "imagem": "/zun-js-vanilla/assets/camiseta-5.jpg",
+      "descricao": "Camiseta Zun Italic 2 Origins de algodão 100% confortável.",
+      "desconto": 40,
+      "estoque": 1,
       "destaque": true
     },
     {
       "id": 6,
-      "nome": "Camiseta 6",
-      "preco": 95.99,
+      "nome": "Camiseta Zun Street Style Edition",
+      "preco": 222.95,
       "imagem": "/zun-js-vanilla/assets/camiseta-6.jpg",
-      "descricao": "Camiseta 6 de algodão 100% confortável.",
+      "descricao": "Camiseta Zun Street Style Edition de algodão 100% confortável.",
+      "desconto": 15,
+      "estoque": 2,
+      "destaque": false
+    },
+    {
+      "id": 7,
+      "nome": "Camiseta Zun Sky Night Edition",
+      "preco": 205.99,
+      "imagem": "/zun-js-vanilla/assets/camiseta-7.jpg",
+      "descricao": "Camiseta Zun Sky Night Edition de algodão 100% confortável.",
+      "desconto": 15,
+      "estoque": 3,
+      "destaque": false
+    },
+    {
+      "id": 8,
+      "nome": "Camiseta Zun Medium Street",
+      "preco": 249.85,
+      "imagem": "/zun-js-vanilla/assets/camiseta-8.jpg",
+      "descricao": "Camiseta Zun Medium Street de algodão 100% confortável.",
+      "desconto": 35,
       "estoque": 3,
       "destaque": true
     },
     {
       "id": 9,
-      "nome": "Camiseta 9",
-      "preco": 119.99,
+      "nome": "Camiseta Zun Minimalist Vibe",
+      "preco": 189.95,
       "imagem": "/zun-js-vanilla/assets/camiseta-9.jpg",
-      "descricao": "Camiseta 9 de algodão 100% confortável.",
+      "descricao": "Camiseta Zun Minimalist Vibe de algodão 100% confortável.",
+      "desconto": 35,
       "estoque": 3,
       "destaque": true
     },
     {
       "id": 10,
-      "nome": "Camiseta 10",
-      "preco": 129.99,
+      "nome": "Camiseta Zun Bold Statement",
+      "preco": 229.85,
       "imagem": "/zun-js-vanilla/assets/camiseta-10.jpg",
-      "descricao": "Camiseta 10 de algodão 100% confortável.",
+      "descricao": "Camiseta Zun Bold Statement de algodão 100% confortável.",
+      "desconto": 20,
       "estoque": 3,
-      "destaque": true
+      "destaque": false
     }
 ]  

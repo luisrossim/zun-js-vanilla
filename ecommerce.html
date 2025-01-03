@@ -10,61 +10,139 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    </head>
    <body class="bg-neutral-100">
-      <nav class="bg-black text-white">
-         <div id="nav-content" class="px-4 md:px-6 py-4">
-            <div class="flex justify-between items-center mb-4">
-               <a href="/zun-js-vanilla" class="text-xs bg-gray-800 px-2 py-1 text-white">
-                  <i class="fa fa-arrow-left mr-1"></i>
-                  <span>HOME</span>
-               </a>
-               <a class="text-gray-400 text-sm hover:underline" href="https://github.com/luisrossim/zun-js-vanilla" target="_blank">
-                  <span>&copy; 2024 zun luisrossim<i class="fa-brands fa-github text-[12px] ml-2"></i></span>
-               </a>
-            </div>
-            <div class="flex items-center gap-3">
-               <i class="fa fa-shop text-lg"></i>
-               <span style="line-height: 1" class="text-2xl font-semibold">E-COMMERCE</span>
+      <nav class="sticky top-0 bg-white z-40">
+         <div class="container mx-auto border-b">
+            <div class="grid grid-cols-2 font-light gap-4 py-5 px-6">
+               <div class="flex items-center gap-4">
+                  <a href="/zun-js-vanilla" class="text-xs bg-black px-2 py-1 text-white">
+                     <i class="fa fa-home"></i>
+                  </a>
+                  <h1 class="text-base">E-COMMERCE</h1>
+               </div>
+               <div class="text-end">
+                  <a id="carrinho" href="#" class="bg-black text-white text-xs md:text-sm py-2 rounded-full gap-3 px-4"> 
+                     <i class="fa fa-bag-shopping mr-2"></i>
+                     <span>Carrinho</span>
+                  </a>
+               </div>
             </div>
          </div>
       </nav>
 
-      <div class="sticky top-[-1px] bg-white z-40 shadow-md">
-         <div id="nav-ecommerce">
-            <div class="flex justify-between items-center font-light gap-4 px-4 py-3">
-               <div class="flex items-center gap-3 px-2"> 
-                  <i class="fa fa-truck-fast"></i>
-                  <span>Frete Grátis</span>
-               </div>
-               <img src="/vite.svg" width="40px" alt="zun-logo">
-               <a class="flex items-center bg-black text-white py-2 rounded-full gap-3 px-4"> 
-                  <i class="fa fa-bag-shopping"></i>
-                  <span>Carrinho</span>
-               </a>
-            </div>
-            <div class="grid grid-cols-4 text-center text-sm md:mx-2 border overflow-hidden md:rounded-t-2xl font-light">
-               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Camisetas</a>
-               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Calças</a>
-               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Jaquetas</a>
-               <a href="#" class="hover:bg-neutral-100 duration-200 p-4">Tênis</a>
-            </div>
+      <div class="bg-[#FEFEFE]">
+         <header class="container mx-auto">
+            <img class="w-full h-auto hidden md:block" src="/assets/bg-ecommerce-header.png" alt="header-img">
+            <img class="w-full h-auto md:hidden" src="/assets/bg-ecommerce-header-md.png" alt="header-img">
+         </header>
+      </div>
+
+      <div class="container mx-auto my-5">
+         <div class="brands flex justify-center gap-6 md:gap-14">
+            <img src="/assets/icon-nike.svg" alt="">
+            <img src="/assets/icon-adidas.svg" alt="">
+            <img src="/assets/icon-fila.svg" alt="">
+            <img src="/assets/icon-puma.svg" alt="">
+            <img src="/assets/icon-levis.png" alt="">
+            <img src="/assets/icon-chanel.png" alt="">
          </div>
       </div>
 
-      <div id="main">
-         <section class="grid grid-cols-1 md:grid-cols-3 md:my-6 md:rounded-2xl md:mx-2 overflow-hidden bg-white md:border">
-            <div class="md:col-span-1 banner banner-destaques h-[200px] md:h-auto"><span>DESTAQUES</span></div>
-            <div id="destaques" class="md:col-span-2 grid grid-cols-2 gap-2 p-4"></div>
-         </section>
+      <div class="container mx-auto">
+         <div class="flex flex-1 md:mx-4 mb-20">
+            <aside class="w-1/4 hidden md:block mr-6">
+               <div class="flex flex-col bg-white font-light text-sm md:text-base sticky top-14 p-6">
+                  <div class="border-b pb-6">
+                     <p class="mb-2 font-medium">ORDENAR:</p>
+                     <select class="w-full border border-gray-300 p-2 rounded-md" name="ordem" id="ordem">
+                        <option value="vendidos" selected>Mais vendidos</option>
+                        <option value="recentes">Mais recentes</option>
+                        <option value="recentes">Menor estoque</option>
+                        <option value="menor">Preço menor</option>
+                        <option value="maior">Preço maior</option>
+                     </select>
+                  </div>
+                  <div class="border-b py-6">
+                     <p class="mb-2 font-medium">PREÇO:</p>
+                     <input type="range" class="w-full cursor-pointer">
+                     <p class="text-center text-neutral-500 mt-2">0 - R$ 300</p>
+                  </div>
+                  <div class="border-b py-6">
+                     <p class="mb-2 font-medium">COR:</p>
+                     <div class="flex gap-2 flex-wrap">
+                        <button class="w-[30px] h-[30px] bg-red-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-orange-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-amber-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-yellow-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-lime-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-green-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-emerald-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-teal-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-cyan-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-sky-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-blue-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-indigo-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-violet-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-purple-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-fuchsia-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-pink-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-zinc-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-neutral-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-stone-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-slate-600 border"></button>
+                        <button class="w-[30px] h-[30px] bg-black border"></button>
+                        <button class="w-[30px] h-[30px] bg-white relative border">
+                           <span class="absolute top-[-5px] right-[-5px] rounded-full p-1 text-xs bg-black text-white fa fa-check"></span>
+                        </button>
+                    </div>                    
+                  </div>
+                  <div class="border-b py-6">
+                     <p class="mb-2 font-medium">TAMANHO:</p>
+                     <div class="flex gap-2 flex-wrap">
+                        <button class="border py-1 px-2">PP</button>
+                        <button class="border py-1 px-2">P</button>
+                        <button class="border py-1 px-2 bg-black text-white">M</button>
+                        <button class="border py-1 px-2">G</button>
+                        <button class="border py-1 px-2">GG</button>
+                        <button class="border py-1 px-2">XG</button>
+                        <button class="border py-1 px-2">XGG</button>
+                    </div>                    
+                  </div>
+                  <div class="pt-6">
+                     <p class="mb-2 font-medium">GÊNERO:</p>
+                     <div class="flex gap-2 flex-wrap">
+                        <button class="border py-1 px-2">MASCULINO</button>
+                        <button class="border py-1 px-2">FEMININO</button>
+                        <button class="border py-1 px-2 bg-black text-white">UNISSEX</button>
+                    </div>                    
+                  </div>
+               </div>
+            </aside>
 
-         <section class="grid grid-cols-1 md:grid-cols-3 md:my-6 md:rounded-2xl md:mx-2 overflow-hidden bg-white md:border">
-            <div id="novidades" class="md:col-span-2 grid grid-cols-2 gap-2 p-4 order-last md:order-1"></div>
-            <div class="md:col-span-1 banner banner-novidades order-1 md:order-last h-[200px] md:h-auto"><span>NOVIDADES</span></div>
-         </section>
-
-         <main class="px-4 md:px-6 my-6 mx-2 border py-6 rounded-2xl bg-white">
-            <p>e-commerce works!</p>
-         </main>
+            <main class="flex-1">
+               <section id="home-items" class="grid grid-cols-2 xl:grid-cols-3 gap-2 md:gap-4 p-2 md:p-4 bg-white"></section>
+            </main>
+         </div>
       </div>
+
+      <footer class="bg-black text-neutral-200 text-center font-light p-20">
+         <div class="container mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-5">
+               <span>option 1</span>
+               <span>option 2</span>
+               <span>option 3</span>
+               <span>option 4</span>
+               <span>option 5</span>
+               <span>option 6</span>
+               <span>option 7</span>
+               <span>option 8</span>
+               <span>option 9</span>
+               <span>option 10</span>
+            </div>
+            <div class="flex justify-center mt-20 pt-5">
+               <img class="invert" src="/vite.svg" alt="">
+            </div>
+         </div>
+      </footer>
       
       <script type="module" src="src/scripts/ecommerce.js"></script>
    </body>
