@@ -6,6 +6,7 @@ module.exports = {
     "./calculadora.html",
     "./form.html",
     "./ecommerce.html",
+    "./challenges.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {

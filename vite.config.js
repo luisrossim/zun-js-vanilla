@@ -11,6 +11,7 @@ export default defineConfig({
                 calculadora: resolve(__dirname, 'calculadora.html'),
                 form: resolve(__dirname, 'form.html'),
                 ecommerce: resolve(__dirname, 'ecommerce.html'),
+                challenges: resolve(__dirname, 'challenges.html'),
             },
         },
     }
